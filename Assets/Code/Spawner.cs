@@ -5,7 +5,8 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
 	public float delay;
-	public GameObject bomberPrefab;
+	public GameObject[] planePrefabs;
+	public float roundDuration = 100f;
 
 	private float lastSpawn = -3f;
 	
@@ -16,7 +17,11 @@ public class Spawner : MonoBehaviour
 	
 	void Update ()
 	{
-		if (lastSpawn + delay < Time.time)
+		if (roundDuration < Time.time)
+		{
+			EvContr.OnVictory();
+		}
+		else if (lastSpawn + delay < Time.time)
 		{
 			Spawn();
 			lastSpawn = Time.time;
@@ -25,7 +30,8 @@ public class Spawner : MonoBehaviour
 
 	void Spawn()
 	{
-		GameObject bomber = Instantiate(bomberPrefab, new Vector3(Random.Range(0, 20) - 10f, 7f, -15f), Quaternion.identity) as GameObject;
-		EvContr.OnSpawn(bomber.GetComponent<Bomber>());
+		int rnd = Random.Range(0, planePrefabs.Length);
+		GameObject plane = Instantiate(planePrefabs[rnd], new Vector3(Random.Range(0, 20) - 10f, 7f, -15f), Quaternion.identity) as GameObject;
+		EvContr.OnSpawn(plane.GetComponent<Plane>());
 	}
 }

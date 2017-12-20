@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 918268b41cecd564c9a4e34c888d56d2
+timeCreated: 1513607080
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: GoudyHandtooled BT
+  fontNames:
+  - GoudyHandtooled BT
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

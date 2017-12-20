@@ -2,25 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bomber : MonoBehaviour
+public class Bomber : Plane
 {
 	public float speed;
 	public GameObject bomb;
 
 	private bool isLaunch = false;
 
-	public void Go (Transform purpose)
+	public override void Go (Transform purpose)
 	{
 		transform.LookAt(purpose);
 		transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, 0f);
 		gameObject.SetActive(true);
 	}
 
-	void Start ()
-	{
-		
-	}
-	
 	void Update ()
 	{
 		if (gameObject.activeSelf)

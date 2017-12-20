@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4477840801993248}
   - component: {fileID: 33808909536627262}
   - component: {fileID: 23177026620244966}
-  - component: {fileID: 111300332328044016}
   - component: {fileID: 114541727848800348}
+  - component: {fileID: 65689251974506456}
   m_Layer: 0
   m_Name: Bomber
   m_TagString: Untagged
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1003687811628150}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.73, y: 7.73, z: 16.01}
+  m_LocalPosition: {x: 87.029945, y: 293.812, z: -126.15551}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,20 +84,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1003687811628150}
   m_Mesh: {fileID: 4300000, guid: ccec83951f612a849aa464dab3696af1, type: 3}
---- !u!111 &111300332328044016
-Animation:
+--- !u!65 &65689251974506456
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1003687811628150}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  serializedVersion: 2
+  m_Size: {x: 11.51726, y: 4.04932, z: 12.14983}
+  m_Center: {x: 0, y: 0.45516002, z: 0.55737495}
 --- !u!114 &114541727848800348
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -109,5 +107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d711f35a5cdc14d94c0774eccd1cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 40
   speed: 2
   bomb: {fileID: 1617747998309526, guid: b5a9366b1a7c7bc46ab04c470860c00b, type: 2}

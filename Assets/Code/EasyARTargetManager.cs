@@ -5,26 +5,39 @@ using EasyAR;
 
 public class EasyARTargetManager : ImageTargetBehaviour
 {
+	public bool isDeveloperMode = false;
+
 	protected override void Awake()
 	{
-		base.Awake();
-		TargetFound += OnTargetFound;
-		TargetLost += OnTargetLost;
-		TargetLoad += OnTargetLoad;
-		TargetUnload += OnTargetUnload;
+		if (!isDeveloperMode)
+		{
+			base.Awake();
+			TargetFound += OnTargetFound;
+			TargetLost += OnTargetLost;
+			TargetLoad += OnTargetLoad;
+			TargetUnload += OnTargetUnload;
+		} else {
+			Time.timeScale = 1f;
+		}
 	}
 
 	void OnTargetFound(TargetAbstractBehaviour obj)
 	{
-		SceneGUI.HideMessage();
-		Time.timeScale = 1f;
-		//Debug.Log("Found: " + Target.Id);
+		if (SceneGUI.ILayer < 1)
+		{
+			SceneGUI.HideMessage();
+			Time.timeScale = 1f;
+			//Debug.Log("Found: " + Target.Id);
+		}
 	}
 	void OnTargetLost(TargetAbstractBehaviour behaviour)
 	{
-		SceneGUI.ShowMessage("Find image");
-		Time.timeScale = 0f;
-		//Debug.Log("Lost: " + Target.Id);
+		if (SceneGUI.ILayer < 1)
+		{
+			SceneGUI.ShowMessage("Find image");
+			Time.timeScale = 0f;
+			//Debug.Log("Lost: " + Target.Id);
+		}
 	}
 	void OnTargetLoad(ImageTargetBaseBehaviour behaviour, ImageTrackerBaseBehaviour tracker, bool status)
 	{
