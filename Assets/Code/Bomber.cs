@@ -29,7 +29,8 @@ public class Bomber : Plane
 		}
 		if (Vector3.Distance(transform.position, Vector3.zero) > 30f)
 		{
-			Destroy(gameObject);
+            this.gameObject.SetActive(false);
+            //Destroy(gameObject);
 		}
 	}
 }

@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
+# Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WadjetUnity", "WadjetUnity.csproj", "{2AA6FD43-6848-DD52-9611-65327AC3B59E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WadjetUnity.Editor", "WadjetUnity.Editor.csproj", "{63303ACA-E14E-A4D0-AA5C-2CF609853EDD}"
