@@ -8,11 +8,12 @@ public class Bomber : Plane
 	public GameObject bomb;
 
 	private bool isLaunch = false;
+    Transform thisTransform;
 
 	public override void Go (Transform purpose)
 	{
-		transform.LookAt(purpose);
-		transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, 0f);
+        thisTransform.LookAt(purpose);
+        thisTransform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, 0f);
 		gameObject.SetActive(true);
 	}
 
@@ -20,7 +21,7 @@ public class Bomber : Plane
 	{
 		if (gameObject.activeSelf)
 		{
-			transform.Translate(0f, 0f, speed * Time.deltaTime);
+            thisTransform.Translate(0f, 0f, speed * Time.deltaTime);
 		}
 		if (!isLaunch && EvContr.OnCheckDistance(transform.position))
 		{
@@ -33,4 +34,9 @@ public class Bomber : Plane
             //Destroy(gameObject);
 		}
 	}
+
+    private void Start()
+    {
+        thisTransform = this.transform;
+    }
 }
